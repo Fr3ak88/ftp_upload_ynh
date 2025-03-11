@@ -1,1 +1,19 @@
+id = "backup_ftp"
+name = "Backup to FTP"
+version = "1.0~ynh1"
+description = "Erstellt Backups und lädt sie auf einen FTP-Server hoch."
+multi_instance = false
+
+maintainer = "Eugen Fritzler <eugen@fritzler-host.de>"
+architecture = "all"
+
+services = []
+
+port = []
+
+systemd_services = []
+
+help = """
+Diese App erstellt regelmäßig Backups und lädt sie auf einen FTP-Server hoch.
+"""
 
