@@ -1,1 +1,29 @@
+#!/bin/bash
+
+# YunoHost-Helfer laden
+source /usr/share/yunohost/helpers
+
+# FTP-Daten abfragen
+read -p "FTP-Server-Adresse: " ftp_server
+read -p "FTP-Benutzername: " ftp_user
+read -sp "FTP-Passwort: " ftp_password
+echo ""
+read -p "Pfad auf dem FTP-Server: " ftp_path
+
+# FTP-Daten als Umgebungsvariablen setzen
+export FTP_SERVER="$ftp_server"
+export FTP_USER="$ftp_user"
+export FTP_PASSWORD="$ftp_password"
+export FTP_PATH="$ftp_path"
+
+# Cron-Job einrichten, um täglich um 5:00 Uhr ein Backup zu erstellen
+crontab -l | { 
+  cat; 
+  echo "0 2 * * * yunohost backup create --output-dir /home/yunohost.backup/archives && ftp -inv \$FTP_SERVER << EOF
+    user \$FTP_USER \$FTP_PASSWORD
+    cd \$FTP_PATH
+    mput /home/yunohost.backup/archives/*
+    quit
+  EOF"; 
+} | crontab -
 
