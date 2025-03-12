@@ -1,9 +1,13 @@
-id = "ftp_upload_ynh"
-name = "FTP Upload"
-version = "1.0~ynh1"
-description = "Eine App, die Backups erstellt und auf einen FTP-Server hochlädt."
 
 packaging_format = 2
+
+id = "ftp_upload_ynh"
+name = "FTP Upload"
+description.de = "Eine App, die Backups erstellt und auf einen FTP-Server hochlädt."
+description.en = "An app that creates backups and uploads them to an FTP server."
+
+version = "1.0~ynh1"
+
 yunohost_version = ">= 11.0.0"
 
 [maintainers]
