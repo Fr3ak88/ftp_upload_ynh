@@ -17,7 +17,8 @@ yunohost = "11.0.0"
 architectures = ["amd64", "arm64", "armhf"]
 multi_instance = false
 disk = "50M"
-ram = "128M"
+ram.build = "128M"
+ram.runtime = "64M"
 
 [arguments.install]
 ftp_server = { ask = "Geben Sie die Adresse des FTP-Servers ein:", type = "string", help = "Beispiel: ftp.example.com" }
