@@ -1,1 +1,10 @@
+#!/bin/bash
+
+# YunoHost-Helfer laden
+source /usr/share/yunohost/helpers
+
+# Cron-Job entfernen
+crontab -l | sed '/yunohost backup create/d' | crontab -
+
+echo "App erfolgreich entfernt."
 
