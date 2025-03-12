@@ -2,18 +2,13 @@ id = "ftp_upload_ynh"
 name = "Backup to FTP"
 version = "1.0~ynh1"
 description = "Erstellt Backups und lädt sie auf einen FTP-Server hoch."
+integration = "app"
+yunohost_version = ">= 11.0.6"
 multi_instance_support = false
 
 maintainers = [
     { name = "Eugen Fritzler", email = "eugen@fritzler-host.de" }
 ]
-architecture = "all"
-integration = "app"
-services = []
-
-port = []
-
-systemd_services = []
 
 help = """
 Diese App erstellt regelmäßig Backups und lädt sie auf einen FTP-Server hoch.
