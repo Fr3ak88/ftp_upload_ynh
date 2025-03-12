@@ -4,17 +4,20 @@ version = "1.0~ynh1"
 description = "Eine App, die Backups erstellt und auf einen FTP-Server hochlädt."
 
 packaging_format = 2
-integration = "app"
 yunohost_version = ">= 11.0.0"
 
-maintainers = [
-  { name = "Eugen Fritzler", email = "eugen@fritzler-host.de" }
-]
+[maintainers]
+name = "Eugen Fritzler"
+email = "eugen@fritzler-host.de"
 
 multi_instance_support = false
 
+[integration]
+yunohost = "11.0.0"
+architectures = ["amd64", "arm64", "armhf"]
+
 [arguments.install]
 ftp_server = { ask = "Geben Sie die Adresse des FTP-Servers ein:", type = "string", help = "Beispiel: ftp.example.com" }
-ftp_user   = { ask = "Geben Sie den Benutzernamen für den FTP-Server ein:", type = "string", help = "Ihr FTP-Benutzername" }
-ftp_password   = { ask = "Geben Sie das Passwort für den FTP-Server ein:", type = "password", help = "Ihr FTP-Passwort" }
-ftp_path   = { ask = "Geben Sie den Pfad auf dem FTP-Server ein:", type = "string", help = "/backups/" }
+ftp_user = { ask = "Geben Sie den Benutzernamen für den FTP-Server ein:", type = "string", help = "Ihr FTP-Benutzername" }
+ftp_password = { ask = "Geben Sie das Passwort für den FTP-Server ein:", type = "password", help = "Ihr FTP-Passwort" }
+ftp_path = { ask = "Geben Sie den Pfad auf dem FTP-Server ein:", type = "string", help = "/backups/" }
