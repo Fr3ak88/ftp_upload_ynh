@@ -43,7 +43,7 @@ help.en = "Your FTP username"
 help.de = "Ihr FTP-Benutzername"
 
 [ftp_password]
-ask.en = "Enter the password for the FTP server:", 
+ask.en = "Enter the password for the FTP server:"
 ask.de = "Geben Sie das Passwort für den FTP-Servers ein:"
 type = "password"
 help.en = "Your FTP password"
