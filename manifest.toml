@@ -10,7 +10,7 @@ yunohost_version = ">= 11.0.0"
 name = "Eugen Fritzler"
 email = "eugen@fritzler-host.de"
 
-multi_instance_support = false
+multi_instance = false
 
 [integration]
 yunohost = "11.0.0"
