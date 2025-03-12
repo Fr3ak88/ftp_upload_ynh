@@ -1,0 +1,73 @@
+packaging_format = 2
+
+id = "ftp_upload_ynh"
+name = "FTP Upload"
+description.de = "Eine App, die Backups erstellt und auf einen FTP-Server hochlädt."
+description.en = "An app that creates backups and uploads them to an FTP server."
+
+version = "1.0~ynh1"
+
+yunohost_version = ">= 11.2.9"
+
+[maintainers]
+name = "Eugen Fritzler"
+email = "eugen@fritzler-host.de"
+
+[upstream]
+license = "AGPL-3.0"
+code = "https://github.com/Fr3ak88/ftp_upload_ynh"
+
+[integration]
+yunohost = ">= 11.2.9"
+architectures = ["amd64", "arm64", "armhf"]
+multi_instance = false
+ldap = "not_relevant"
+sso = "not_relevant"
+disk = "50M"
+ram.build = "128M"
+ram.runtime = "64M"
+
+[arguments.install]
+ftp_server = { 
+    ask.en = "Enter the address of the FTP server:", 
+    ask.de = "Geben Sie die Adresse des FTP-Servers ein:",
+    type = "string", 
+    help.en = "Example: ftp.example.com",
+    help.de = "Beispiel: ftp.example.com" 
+}
+ftp_user = { 
+    ask.en = "Enter the username for the FTP server:", 
+    ask.de = "Geben Sie den Benutzernamen für den FTP-Server ein:",
+    type = "string", 
+    help.en = "Your FTP username",
+    help.de = "Ihr FTP-Benutzername"
+}
+ftp_password = { 
+    ask.en = "Enter the password for the FTP server:", 
+    ask.de = "Geben Sie das Passwort für den FTP-Servers ein:",
+    type = "password", 
+    help.en = "Your FTP password",
+    help.de = "Ihr FTP-Passwort"
+}
+ftp_path = { 
+    ask.en = "Enter the path on the FTP server:", 
+    ask.de = "Geben Sie den Pfad auf dem FTP-Servers ein:",
+    type = "string", 
+    help.en = "Example: /backups/",
+    help.de = "Beispiel: /backups/"
+}
+
+[resources]
+    [resources.system_user]
+
+    [resources.install_dir]
+
+    [resources.data_dir]
+    subdirs = ["backups"]
+
+    [resources.permissions]
+
+    [resources.apt]
+    packages = [
+        "ftp",
+    ]
