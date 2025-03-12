@@ -10,11 +10,12 @@ yunohost_version = ">= 11.0.0"
 name = "Eugen Fritzler"
 email = "eugen@fritzler-host.de"
 
-multi_instance = false
+multi_instance_support = false
 
 [integration]
 yunohost = "11.0.0"
 architectures = ["amd64", "arm64", "armhf"]
+multi_instance = false
 
 [arguments.install]
 ftp_server = { ask = "Geben Sie die Adresse des FTP-Servers ein:", type = "string", help = "Beispiel: ftp.example.com" }
