@@ -29,32 +29,32 @@ ram.runtime = "64M"
 
 [arguments.install]
 [ftp_server]
-    ask.en = "Enter the address of the FTP server:", 
-    ask.de = "Geben Sie die Adresse des FTP-Servers ein:",
-    type = "string", 
-    help.en = "Example: ftp.example.com",
-    help.de = "Beispiel: ftp.example.com" 
+ask.en = "Enter the address of the FTP server:", 
+ask.de = "Geben Sie die Adresse des FTP-Servers ein:",
+type = "string", 
+help.en = "Example: ftp.example.com",
+help.de = "Beispiel: ftp.example.com" 
 
 [ftp_user]
-    ask.en = "Enter the username for the FTP server:", 
-    ask.de = "Geben Sie den Benutzernamen für den FTP-Server ein:",
-    type = "string", 
-    help.en = "Your FTP username",
-    help.de = "Ihr FTP-Benutzername"
+ask.en = "Enter the username for the FTP server:", 
+ask.de = "Geben Sie den Benutzernamen für den FTP-Server ein:",
+type = "string", 
+help.en = "Your FTP username",
+help.de = "Ihr FTP-Benutzername"
 
 [ftp_password]
-    ask.en = "Enter the password for the FTP server:", 
-    ask.de = "Geben Sie das Passwort für den FTP-Servers ein:",
-    type = "password", 
-    help.en = "Your FTP password",
-    help.de = "Ihr FTP-Passwort"
+ask.en = "Enter the password for the FTP server:", 
+ask.de = "Geben Sie das Passwort für den FTP-Servers ein:",
+type = "password", 
+help.en = "Your FTP password",
+help.de = "Ihr FTP-Passwort"
 
 [ftp_path]
-    ask.en = "Enter the path on the FTP server:", 
-    ask.de = "Geben Sie den Pfad auf dem FTP-Servers ein:",
-    type = "string", 
-    help.en = "Example: /backups/",
-    help.de = "Beispiel: /backups/"
+ask.en = "Enter the path on the FTP server:", 
+ask.de = "Geben Sie den Pfad auf dem FTP-Servers ein:",
+type = "string", 
+help.en = "Example: /backups/",
+help.de = "Beispiel: /backups/"
 
 [resources]
     [resources.system_user]
