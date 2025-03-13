@@ -27,31 +27,27 @@ disk = "50M"
 ram.build = "128M"
 ram.runtime = "64M"
 
-[arguments.install]
-[ftp_server]
-ask.en = "Enter the address of the FTP server:"
+[install]
+[install.ftp_server]
+ask.en = "Enter the FTP server address:"
 ask.de = "Geben Sie die Adresse des FTP-Servers ein:"
 type = "string"
 help.en = "Example: ftp.example.com"
-help.de = "Beispiel: ftp.example.com" 
+help.de = "Beispiel: ftp.example.com"
 
-[ftp_user]
-ask.en = "Enter the username for the FTP server:"
-ask.de = "Geben Sie den Benutzernamen für den FTP-Server ein:"
+[install.ftp_user]
+ask.en = "Enter the FTP username:"
+ask.de = "Geben Sie den FTP-Benutzernamen ein:"
 type = "string"
-help.en = "Your FTP username"
-help.de = "Ihr FTP-Benutzername"
 
-[ftp_password]
-ask.en = "Enter the password for the FTP server:"
-ask.de = "Geben Sie das Passwort für den FTP-Servers ein:"
+[install.ftp_password]
+ask.en = "Enter the FTP password:"
+ask.de = "Geben Sie das FTP-Passwort ein:"
 type = "password"
-help.en = "Your FTP password"
-help.de = "Ihr FTP-Passwort"
 
-[ftp_path]
-ask.en = "Enter the path on the FTP server:"
-ask.de = "Geben Sie den Pfad auf dem FTP-Servers ein:"
+[install.ftp_path]
+ask.en = "Enter the FTP path for backups:"
+ask.de = "Geben Sie den FTP-Pfad für Backups ein:"
 type = "string"
 help.en = "Example: /backups/"
 help.de = "Beispiel: /backups/"
