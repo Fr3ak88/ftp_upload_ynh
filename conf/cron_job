@@ -1,0 +1,10 @@
+# Cronjob für FTP-Upload von Backups
+# Dieser Job wird täglich um 2:00 Uhr ausgeführt.
+
+0 2 * * * /usr/bin/ftp -inv <<EOF
+open ftp.example.com
+user ftp_user ftp_password
+cd /backups/
+mput /home/yunohost.backup/archives/*
+quit
+EOF
