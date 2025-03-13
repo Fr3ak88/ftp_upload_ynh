@@ -14,7 +14,7 @@ name = "Eugen Fritzler"
 email = "eugen@fritzler-host.de"
 
 [upstream]
-license = "AGPL-3.0"
+license = "GPL-3.0"
 code = "https://github.com/Fr3ak88/ftp_upload_ynh"
 
 [integration]
