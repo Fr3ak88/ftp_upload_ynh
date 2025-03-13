@@ -3,27 +3,22 @@
 source /usr/share/yunohost/helpers
 
 # Argumente abrufen
-ftp_server=$YNH_APP_ARG_ftp_server
-ftp_user=$YNH_APP_ARG_ftp_user
-ftp_password=$YNH_APP_ARG_ftp_password
-ftp_path=$YNH_APP_ARG_ftp_path
+ftp_server=$(ynh_app_setting_get --app=$app --key=ftp_server)
+ftp_user=$(ynh_app_setting_get --app=$app --key=ftp_user)
+ftp_password=$(ynh_app_setting_get --app=$app --key=ftp_password)
+ftp_path=$(ynh_app_setting_get --app=$app --key=ftp_path)
 
 # FTP-Daten prüfen
 if [ -z "$ftp_server" ] || [ -z "$ftp_user" ] || [ -z "$ftp_password" ] || [ -z "$ftp_path" ]; then
-  ynh_exit_with_errors 1 "FTP-Daten fehlen."
+  ynh_die --message="FTP-Daten fehlen."
 fi
 
 # FTP installieren
-apt-get update
-apt-get install -y ftp
+ynh_package_update
+ynh_package_install ftp
 
 # Cronjob erstellen
-crontab -l | { cat; echo "0 2 * * * ftp -inv $ftp_server << EOF
-user $ftp_user $ftp_password
-cd $ftp_path
-mput /home/yunohost.backup/archives/*
-quit
-EOF"; } | crontab -
+ynh_add_config --template="../conf/cron_job" --destination="/etc/cron.d/$app"
 
 # Erfolgsmeldung anzeigen
-ynh_print_ok "App erfolgreich installiert."
+ynh_print_info --message="App erfolgreich installiert."
