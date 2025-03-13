@@ -1,9 +1,0 @@
-#!/bin/bash
-
-# YunoHost-Helfer laden
-source /usr/share/yunohost/helpers
-
-# Hier können Sie zusätzliche Schritte hinzufügen, die während des Backups ausgeführt werden sollen
-# Zum Beispiel:
-echo "Backup-Prozess gestartet."
-
