@@ -2,8 +2,8 @@ packaging_format = 2
 
 id = "ftp_upload_ynh"
 name = "FTP Upload"
-description.de = "Eine App, die Backups erstellt und auf einen FTP-Server hochlädt."
-description.en = "An app that creates backups and uploads them to an FTP server."
+description.de = "Eine App, die täglich um 2 Uhr Backups erstellt und auf einen FTP-Server hochlädt."
+description.en = "An app that creates daily backups at 2 AM and uploads them to an FTP server."
 
 version = "1.0~ynh1"
 
