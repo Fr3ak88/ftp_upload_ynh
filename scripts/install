@@ -1,29 +1,29 @@
 #!/bin/bash
 source /usr/share/yunohost/helpers
 
-# Retrieve entered values
+# Argumente abrufen und validieren
 ftp_server="$YNH_APP_ARG_FTP_SERVER"
 ftp_user="$YNH_APP_ARG_FTP_USER"
 ftp_password="$YNH_APP_ARG_FTP_PASSWORD"
 ftp_path="$YNH_APP_ARG_FTP_PATH"
 
-# Save the values as app settings
+if [ -z "$ftp_server" ] || [ -z "$ftp_user" ] || [ -z "$ftp_password" ] || [ -z "$ftp_path" ]; then
+  ynh_die --message="FTP-Daten fehlen."
+fi
+
+# FTP-Daten persistent speichern
 ynh_app_setting_set --app="$app" --key=ftp_server --value="$ftp_server"
 ynh_app_setting_set --app="$app" --key=ftp_user --value="$ftp_user"
 ynh_app_setting_set --app="$app" --key=ftp_password --value="$ftp_password"
 ynh_app_setting_set --app="$app" --key=ftp_path --value="$ftp_path"
 
-# FTP-Daten prüfen
-if [ -z "$ftp_server" ] || [ -z "$ftp_user" ] || [ -z "$ftp_password" ] || [ -z "$ftp_path" ]; then
-  ynh_die --message="FTP-Daten fehlen."
-fi
-
-# FTP installieren
+# Pakete installieren
 ynh_package_update
 ynh_package_install ftp
 
-# Cronjob erstellen
-ynh_add_config --template="../conf/cron_job" --destination="/etc/cron.d/$app"
+# Cronjob-Template mit Variablen ersetzen
+ynh_add_config --template="../conf/cron_job" \
+               --destination="/etc/cron.d/$app" \
+               --replace_vars="ftp_server ftp_user ftp_password ftp_path"
 
-# Erfolgsmeldung anzeigen
 ynh_print_info --message="App erfolgreich installiert."
