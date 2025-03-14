@@ -63,7 +63,7 @@ help.de = "Beispiel: /backups/"
     [resources.permissions]
      # Admin-Zugriff explizit definieren
         [resources.permissions.admin_access]
-        allowed = ["Administratoren"]  # Zugriff nur für Administratoren
+        allowed = ["admins"]  # Zugriff nur für Administratoren
         
     [resources.apt]
     packages = [
