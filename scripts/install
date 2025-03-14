@@ -30,6 +30,6 @@ ynh_package_install ftp
 # Cronjob-Template mit Variablen ersetzen
 ynh_add_config --template="../conf/cron_job" \
                --destination="/etc/cron.d/$app" \
-               --replace_vars="FTP_SERVER,FTP_USER,FTP_PASSWORD,FTP_PATH"
+               replace_vars="FTP_SERVER,FTP_USER,FTP_PASSWORD,FTP_PATH"
 
 ynh_print_info --message="App erfolgreich installiert."
