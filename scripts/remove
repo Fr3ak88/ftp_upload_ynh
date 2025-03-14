@@ -3,7 +3,18 @@
 # YunoHost-Helfer laden
 source /usr/share/yunohost/helpers
 
-# Cron-Job entfernen
+# Cron-Job aus der Benutzer-Crontab entfernen
 crontab -l | sed '/yunohost backup create/d' | crontab -
 
-echo "App erfolgreich entfernt."
+# Cron-Job-Datei aus /etc/cron.d/ entfernen
+if [ -f "/etc/cron.d/$app" ]; then
+    sudo rm "/etc/cron.d/$app"
+    ynh_print_info --message="Cron-Job-Datei für $app wurde entfernt."
+else
+    ynh_print_info --message="Keine Cron-Job-Datei für $app gefunden."
+fi
+
+# Cron-Dienst neu starten
+sudo service cron reload
+
+ynh_print_info --message="App und zugehöriger Cron-Job erfolgreich entfernt."
