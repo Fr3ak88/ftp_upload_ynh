@@ -1,0 +1,4 @@
+[run_backup]
+name = "Run Backup Now"
+command = "/bin/bash scripts/backup_now.sh"
+description = "Run FTP backup immediately"
