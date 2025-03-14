@@ -10,6 +10,7 @@ ftp_path="$YNH_APP_ARG_FTP_PATH"
 # Debug-Ausgaben hinzufügen
 ynh_print_info --message="DEBUG: FTP Server = $ftp_server"
 ynh_print_info --message="DEBUG: FTP User = $ftp_user"
+ynh_print_info --message="DEBUG: FTP Password = $ftp_password"
 ynh_print_info --message="DEBUG: FTP Path = $ftp_path"
 
 if [ -z "$ftp_server" ] || [ -z "$ftp_user" ] || [ -z "$ftp_password" ] || [ -z "$ftp_path" ]; then
