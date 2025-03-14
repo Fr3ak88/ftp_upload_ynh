@@ -2,10 +2,10 @@
 source /usr/share/yunohost/helpers
 
 # Argumente abrufen und validieren
-ftp_server="$YNH_APP_ARG_FTP_SERVER"
-ftp_user="$YNH_APP_ARG_FTP_USER"
-ftp_password="$YNH_APP_ARG_FTP_PASSWORD"
-ftp_path="$YNH_APP_ARG_FTP_PATH"
+ftp_server="$YNH_APP_ARG_ftp_server"
+ftp_user="$YNH_APP_ARG_ftp_user"
+ftp_password="$YNH_APP_ARG_ftp_password"
+ftp_path="$YNH_APP_ARG_ftp_path"
 
 # Debug-Ausgaben hinzufügen
 ynh_print_info --message="DEBUG: FTP Server = $ftp_server"
