@@ -1,5 +1,4 @@
 # Cronjob für FTP-Upload von Backups
-# Dieser Job wird taeglich um 2:00 Uhr ausgeführt.
 
 # FTP-Upload-Cronjob
 0 2 * * * root ftp -inv __FTP_SERVER__ <<EOF
@@ -8,3 +7,9 @@ cd __FTP_PATH__
 mput /home/yunohost.backup/archives/*
 quit
 EOF
+
+# Tägliches Backup um 2 Uhr morgens
+0 2 * * * root /bin/bash /path/to/your/backup_now.sh
+
+# Lösche alte Backups um 3 Uhr morgens
+0 3 * * * root /bin/bash /path/to/your/cleanup_old_backups.sh
