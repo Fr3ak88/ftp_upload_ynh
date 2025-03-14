@@ -61,7 +61,10 @@ help.de = "Beispiel: /backups/"
     subdirs = ["backups"]
 
     [resources.permissions]
-
+     # Admin-Zugriff explizit definieren
+        [resources.permissions.admin_access]
+        allowed = ["admin"]  # Zugriff nur für Administratoren
+        
     [resources.apt]
     packages = [
         "ftp",
