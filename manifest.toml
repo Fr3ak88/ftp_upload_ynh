@@ -53,24 +53,23 @@ help.en = "Example: /backups/"
 help.de = "Beispiel: /backups/"
 
 [resources]
-    [resources.system_user]
+[resources.system_user]
 
-    [resources.install_dir]
+[resources.install_dir]
 
-    [resources.data_dir]
-    subdirs = ["backups"]
+[resources.data_dir]
+subdirs = ["backups"]
 
-    [resources.permissions]
-     # Admin-Zugriff explizit definieren
-        [resources.permissions.admin_access]
-        allowed = ["admins"]  # Zugriff nur für Administratoren
+[resources.permissions]
+[resources.permissions.admin_access]
+allowed = ["admins"]
         
-    [resources.apt]
-    packages = [
+[resources.apt]
+packages = [
         "ftp",
     ]
 
 [admin]
-    [admin.main_button]
-    name = "Run Backup Now"
-    link = "/run_backup"
+[admin.main_button]
+name = "Run Backup Now"
+link = "/run_backup"
